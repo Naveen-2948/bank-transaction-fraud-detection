@@ -1,0 +1,31 @@
+transaction_id,customer_name,account_no,city,transaction_time,amount,merchant,location,channel
+EXTRA0001,Aarav Sharma,AC2001,Mumbai,2026-10-14 23:07:00,567.19,Metro Pharmacy,Jaipur,Online
+EXTRA0002,Priya Patel,AC2002,Pune,2026-10-07 04:15:00,4111.01,Travel Desk,Hyderabad,ATM
+EXTRA0003,Rahul Verma,AC2003,Delhi,2026-10-03 12:43:00,13363.14,Mobile World,Pune,Mobile App
+EXTRA0004,Ananya Rao,AC2004,Bengaluru,2026-10-12 23:05:00,10678.01,Quick Electronics,Kolkata,POS
+EXTRA0005,Vikram Singh,AC2005,Hyderabad,2026-10-02 00:01:00,1795.27,Online Market,Kochi,Online
+EXTRA0006,Meera Nair,AC2006,Kochi,2026-10-06 07:32:00,10884.09,Coffee House,Delhi,ATM
+EXTRA0007,Arjun Reddy,AC2007,Chennai,2026-10-13 07:12:00,53053.00,City Fuel,Lucknow,Mobile App
+EXTRA0008,Isha Gupta,AC2008,Jaipur,2026-10-10 06:14:00,8151.86,Food Corner,Chennai,POS
+EXTRA0009,Kabir Das,AC2009,Kolkata,2026-10-07 06:51:00,15663.09,Fashion Hub,Bengaluru,Online
+EXTRA0010,Sana Khan,AC2010,Lucknow,2026-10-04 17:44:00,7676.35,Grocery Mart,Mumbai,ATM
+EXTRA0011,Aarav Sharma,AC2001,Mumbai,2026-10-07 06:09:00,3969.81,Metro Pharmacy,Jaipur,Mobile App
+EXTRA0012,Priya Patel,AC2002,Pune,2026-10-08 12:06:00,1778.30,Travel Desk,Hyderabad,POS
+EXTRA0013,Rahul Verma,AC2003,Delhi,2026-10-03 09:22:00,15273.20,Mobile World,Pune,Online
+EXTRA0014,Ananya Rao,AC2004,Bengaluru,2026-10-14 05:16:00,14551.45,Quick Electronics,Kolkata,ATM
+EXTRA0015,Vikram Singh,AC2005,Hyderabad,2026-10-11 03:34:00,2351.89,Online Market,Kochi,Mobile App
+EXTRA0016,Meera Nair,AC2006,Kochi,2026-10-09 09:05:00,58176.19,Coffee House,Delhi,POS
+EXTRA0017,Arjun Reddy,AC2007,Chennai,2026-10-14 12:56:00,15527.32,City Fuel,Lucknow,Online
+EXTRA0018,Isha Gupta,AC2008,Jaipur,2026-10-13 15:12:00,12717.74,Food Corner,Chennai,ATM
+EXTRA0019,Kabir Das,AC2009,Kolkata,2026-10-02 07:42:00,4194.82,Fashion Hub,Bengaluru,Mobile App
+EXTRA0020,Sana Khan,AC2010,Lucknow,2026-10-07 12:05:00,15413.08,Grocery Mart,Mumbai,POS
+EXTRA0021,Aarav Sharma,AC2001,Mumbai,2026-10-03 11:24:00,5090.17,Metro Pharmacy,Jaipur,Online
+EXTRA0022,Priya Patel,AC2002,Pune,2026-10-14 21:53:00,6643.20,Travel Desk,Hyderabad,ATM
+EXTRA0023,Rahul Verma,AC2003,Delhi,2026-10-09 05:22:00,3865.99,Mobile World,Pune,Mobile App
+EXTRA0024,Ananya Rao,AC2004,Bengaluru,2026-10-07 00:44:00,16867.38,Quick Electronics,Kolkata,POS
+EXTRA0025,Vikram Singh,AC2005,Hyderabad,2026-10-02 20:38:00,46365.60,Online Market,Kochi,Online
+EXTRA0026,Meera Nair,AC2006,Kochi,2026-10-06 13:10:00,8385.21,Coffee House,Delhi,ATM
+EXTRA0027,Arjun Reddy,AC2007,Chennai,2026-10-07 02:59:00,11563.20,City Fuel,Lucknow,Mobile App
+EXTRA0028,Isha Gupta,AC2008,Jaipur,2026-10-13 05:14:00,12360.90,Food Corner,Chennai,POS
+EXTRA0029,Kabir Das,AC2009,Kolkata,2026-10-02 12:14:00,14813.83,Fashion Hub,Bengaluru,Online
+EXTRA0030,Sana Khan,AC2010,Lucknow,2026-10-08 01:25:00,4907.21,Grocery Mart,Mumbai,ATM

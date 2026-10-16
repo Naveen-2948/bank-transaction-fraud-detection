@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Bank Fraud Analytics{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="{{ url_for('main.dashboard') if session.get('user_id') else url_for('auth.login') }}">Bank Fraud Analytics</a>
+  {% if session.get('user_id') %}
+  <nav>
+    <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
+    <a href="{{ url_for('transactions.list_transactions') }}">Transactions</a>
+    <a href="{{ url_for('transactions.upload') }}">Upload CSV</a>
+    <a href="{{ url_for('reviews.queue') }}">Review Queue</a>
+    <a href="{{ url_for('analytics.export_report') }}">Export CSV</a>
+    <span>{{ session.get('username') }} ({{ session.get('role') }})</span>
+    <a href="{{ url_for('auth.logout') }}">Logout</a>
+  </nav>
+  {% endif %}
+</header>
+<main class="container">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}<div class="alert {{ category }}">{{ message }}</div>{% endfor %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</main>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body></html>

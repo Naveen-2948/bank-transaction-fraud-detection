@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Upload CSV{% endblock %}
+
+{% block content %}
+<section class="panel">
+    <h1>Upload your transactions</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <label>
+            Choose your CSV file
+            <input type="file" name="file" accept=".csv,text/csv" required>
+        </label>
+
+        <button type="submit">Upload and analyze</button>
+    </form>
+</section>
+{% endblock %}

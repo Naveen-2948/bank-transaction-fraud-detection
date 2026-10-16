@@ -1,0 +1,13 @@
+transaction_id,customer_name,account_no,city,transaction_time,amount,merchant,location,channel
+T1001,Asha Patil,AC1001,Belagavi,2026-10-01 09:10:00,450,Supermarket,Belagavi,POS
+T1002,Rahul Desai,AC1002,Belagavi,2026-10-01 10:20:00,1200,Pharmacy,Belagavi,POS
+T1003,Meera Kulkarni,AC1003,Dharwad,2026-10-01 11:30:00,850,Restaurant,Dharwad,Online
+T1004,Arjun Rao,AC1004,Bengaluru,2026-10-01 12:15:00,25000,Electronics,Bengaluru,Online
+T1005,Asha Patil,AC1001,Belagavi,2026-10-01 13:45:00,600,Grocery,Belagavi,POS
+T1006,Rahul Desai,AC1002,Belagavi,2026-10-01 14:10:00,18000,Electronics,Mumbai,Online
+T1007,Meera Kulkarni,AC1003,Dharwad,2026-10-01 15:00:00,350,Transport,Belagavi,POS
+T1008,Arjun Rao,AC1004,Bengaluru,2026-10-01 16:30:00,950,Restaurant,Dharwad,Online
+T1009,Asha Patil,AC1001,Belagavi,2026-10-01 18:20:00,42000,Electronics,Delhi,Online
+T1010,Rahul Desai,AC1002,Belagavi,2026-10-01 19:40:00,700,Supermarket,Belagavi,POS
+T1011,Meera Kulkarni,AC1003,Dharwad,2026-10-02 09:05:00,1500,Pharmacy,Dharwad,POS
+T1012,Arjun Rao,AC1004,Bengaluru,2026-10-02 10:50:00,32000,Electronics,Mumbai,Online

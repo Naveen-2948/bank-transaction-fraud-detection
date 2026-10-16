@@ -1,0 +1,40 @@
+{% extends "base.html" %}{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="dashboard-heading">
+  <div><p class="eyebrow">RISK MONITORING / OVERVIEW</p><h1>Fraud analytics dashboard</h1><p class="muted">Explore transaction activity, prediction outcomes and suspicious channels.</p></div>
+  <a class="export-button" href="{{ url_for('analytics.export_report') }}">Export report CSV</a>
+</div>
+<div class="cards">
+  <div class="metric metric-blue"><span>Total transactions</span><strong>{{ total }}</strong><small>All uploaded transactions</small></div>
+  <div class="metric metric-red"><span>Flagged suspicious</span><strong>{{ flagged }}</strong><small>{% if total %}{{ '%.1f'|format(flagged / total * 100) }}% of all transactions{% else %}No transactions yet{% endif %}</small></div>
+  <div class="metric metric-purple"><span>Suspicious amount</span><strong>₹{{ '{:,.2f}'.format(suspicious_amount|float) }}</strong><small>Total amount flagged by baseline rules</small></div>
+  <div class="metric metric-orange"><span>Pending reviews</span><strong>{{ pending }}</strong><small>Items awaiting analyst review</small></div>
+</div>
+<div class="chart-toolbar panel">
+  <div><h2>Transaction insights</h2><p class="muted">Charts update from the transactions stored in your database.</p></div>
+  <label class="period-picker">Trend range <select id="trendRange"><option value="7">Last 7 days</option><option value="14">Last 14 days</option><option value="30" selected>Last 30 days</option></select></label>
+</div>
+<div class="chart-grid">
+  <section class="panel chart-panel chart-wide"><div class="panel-title"><div><h2>Transaction volume</h2><p class="muted">Number of transactions per day</p></div><span class="chart-tag">DAILY TREND</span></div><div class="chart-area"><canvas id="dailyChart" aria-label="Daily transaction volume chart"></canvas></div></section>
+  <section class="panel chart-panel"><div class="panel-title"><div><h2>Prediction breakdown</h2><p class="muted">Current status of saved transactions</p></div></div><div class="chart-area doughnut-area"><canvas id="decisionChart" aria-label="Prediction decision doughnut chart"></canvas></div></section>
+  <section class="panel chart-panel"><div class="panel-title"><div><h2>Suspicious by channel</h2><p class="muted">Flagged transactions grouped by channel</p></div></div><div class="chart-area"><canvas id="channelChart" aria-label="Suspicious transactions by channel chart"></canvas></div></section>
+  <section class="panel chart-panel"><div class="panel-title"><div><h2>Top flagged merchants</h2><p class="muted">Merchants with the most suspicious transactions</p></div></div><div class="chart-area"><canvas id="merchantChart" aria-label="Top merchants by suspicious transaction count"></canvas></div></section>
+</div>
+<section class="panel recent-panel"><div class="panel-title"><div><h2>Recent transactions</h2><p class="muted">Latest eight records</p></div><a href="{{ url_for('transactions.list_transactions') }}">View all →</a></div>
+{% if recent %}<div class="table-wrap"><table><thead><tr><th>ID</th><th>Time</th><th>Customer</th><th>Amount</th><th>Merchant</th><th>Prediction</th></tr></thead><tbody>
+{% for tx in recent %}<tr><td>{{ tx.transaction_id }}</td><td>{{ tx.transaction_time }}</td><td>{{ tx.customer.name }}</td><td>₹{{ '%.2f'|format(tx.amount|float) }}</td><td>{{ tx.merchant }}</td><td>{% if tx.prediction %}<span class="pill {{ 'danger' if tx.prediction.decision == 'Suspicious' else 'success' }}">{{ tx.prediction.decision }} ({{ '%.0f'|format(tx.prediction.fraud_probability*100) }}%)</span>{% else %}<span class="pill">Not predicted</span>{% endif %}</td></tr>{% endfor %}
+</tbody></table></div>{% else %}<p>No transactions yet. <a href="{{ url_for('transactions.upload') }}">Upload a CSV file</a> to begin.</p>{% endif %}</section>
+<p class="note">Important: this educational prototype currently uses transparent baseline rules for its fraud score. Charts summarize the stored data; they do not prove the model is accurate. Validate with representative labelled data before real-world use.</p>
+<script>
+window.dashboardChartData = {
+  dailyLabels: {{ chart_daily_labels|tojson }},
+  dailyValues: {{ chart_daily_values|tojson }},
+  decisionLabels: {{ chart_decision_labels|tojson }},
+  decisionValues: {{ chart_decision_values|tojson }},
+  channelLabels: {{ chart_channel_labels|tojson }},
+  channelValues: {{ chart_channel_values|tojson }},
+  merchantLabels: {{ chart_merchant_labels|tojson }},
+  merchantValues: {{ chart_merchant_values|tojson }}
+};
+</script>
+{% endblock %}
